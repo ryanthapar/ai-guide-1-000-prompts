@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1,000+ AI prompts and 7 training modules for real estate agents. Close more deals in half the time using ChatGPT.">
+    <title>AI Toolkit for Real Estate Agents | Close More Deals in Half the Time</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .subheadline {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #dc2626;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .cta-secondary {
+            background-color: #f59e0b;
+        }
+
+        .cta-secondary:hover {
+            background-color: #d97706;
+        }
+
+        .trust-indicator {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        section:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1e293b;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+        }
+
+        .problem-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .problem-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .problem-card li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .solution-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h3 {
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        .feature-item ul {
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .feature-item li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-item li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-card {
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .before {
+            background: #fee2e2;
+            border: 2px solid #dc2626;
+        }
+
+        .after {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+        }
+
+        .comparison-card h3 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-card li {
+            padding: 12px 0;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-title {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .testimonial-highlight {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card.recommended {
+            border-color: #10b981;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin: 20px 0;
+        }
+
+        .price-description {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bonus-card h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .bonus-value {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .faq-answer {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .guarantee {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .guarantee h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .guarantee p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .final-cta ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .final-cta li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .final-cta li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item ul {
+                columns: 1;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+            }
+
+            .pricing-card.recommended {
+                transform: scale(1);
+            }
+        }
+
+        .urgency-banner {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .urgency-banner p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Close More Deals in Half the Time: The Complete AI System Real Estate Agents Use to Generate Leads, Convert Clients, and Automate Their Business</h1>
+            <p class="subheadline">1,000+ Ready-to-Use ChatGPT Prompts + 7 Training Modules That Transform Struggling Agents into Top Producers</p>
+            <a href="https://buy.stripe.com/00wdR94CX1Xbbv1e12frW01" class="cta-button">Get Instant Access Now</a>
+            <div class="trust-indicator">
+                <div class="stars">★★★★★</div>
+                <p>Join 2,000+ agents already using AI to dominate their market</p>
+                <p>4.9/5 from 847 reviews</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section id="problem">
+        <div class="container">
+            <h2>Are You Wasting 20+ Hours a Week on Tasks That Don't Close Deals?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Drowning in Admin Work</h3>
+                    <ul>
+                        <li>Writing listing descriptions</li>
+                        <li>Following up with cold leads</li>
+                        <li>Creating social media content</li>
+                        <li>Drafting emails and texts</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>Losing Leads to Faster Agents</h3>
+                    <ul>
+                        <li>Slow response times</li>
+                        <li>Generic, robotic messages</li>
+                        <li>No consistent follow-up system</li>
+                        <li>Weak objection handling</li>
+                    </ul>
+                </div>
+                <div class="problem-card">
+                    <h3>Struggling to Stand Out</h3>
+                    <ul>
+                        <li>Same marketing as everyone else</li>
+                        <li>No time for personal branding</li>
+                        <li>Can't scale past 10-15 deals/year</li>
+                        <li>Stuck trading time for money</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto; color: #475569;">
+                <strong>While you're manually writing the same emails over and over, top producers are using AI to respond in seconds, nurture hundreds of leads simultaneously, and focus entirely on high-value activities.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Overview -->
+    <section id="solution">
+        <div class="container">
+            <h2>Introducing: The Real Estate AI Toolkit That Does Your Busywork for You</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="icon">📚</div>
+                    <h3>1,000+ ChatGPT Prompts</h3>
+                    <p>Instant access to proven scripts for every situation. Copy, paste, and customize in seconds.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">🎓</div>
+                    <h3>7 Training Modules</h3>
+                    <p>Complete step-by-step training from AI foundations to advanced automation workflows.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">⚡</div>
+                    <h3>Ready to Use Today</h3>
+                    <p>No technical skills required. If you can copy and paste, you can use this system.</p>
+                </div>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>🎯 Complete Prompt Library (1,000+ Prompts)</h3>
+                    <ul>
+                        <li>Lead Generation (100 prompts)</li>
+                        <li>Marketing & Content (200 prompts)</li>
+                        <li>Lead Conversion (150 prompts)</li>
+                        <li>Listing Descriptions (200 prompts)</li>
+                        <li>Buyer Representation (150 prompts)</li>
+                        <li>Client Communication (100 prompts)</li>
+                        <li>Automation Workflows (100 prompts)</li>
+                        <li>Geographic farming scripts</li>
+                        <li>Cold calling & circle dialing</li>
+                        <li>FSBO & expired listings</li>
+                        <li>Social media DM outreach</li>
+                        <li>Email campaigns & drip sequences</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item">
+                    <h3>📖 7 Complete Training Modules</h3>
+                    <ul>
+                        <li><strong>Part 1:</strong> AI Foundations - Master ChatGPT basics</li>
+                        <li><strong>Part 2:</strong> Lead Generation & Marketing</li>
+                        <li><strong>Part 3:</strong> Conversion & Communication</li>
+                        <li><strong>Part 4:</strong> Listings & Buyer Rep</li>
+                        <li><strong>Part 5:</strong> Automation & Workflows</li>
+                        <li><strong>Part 6:</strong> Templates & Swipe Files</li>
+                        <li><strong>Part 7:</strong> Advanced Prompt Packs</li>
+                        <li>How to train ChatGPT on YOUR voice</li>
+                        <li>4-element prompt formula</li>
+                        <li>Protecting client confidentiality</li>
+                        <li>Time-saving workflows</li>
+                        <li>Advanced productivity techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section id="transformation">
+        <div class="container">
+            <h2>What Happens When You Start Using This System</h2>
+            <div class="comparison">
+                <div class="comparison-card before">
+                    <h3>Before</h3>
+                    <ul>
+                        <li>❌ Spending 3 hours writing one listing description</li>
+                        <li>❌ Forgetting to follow up with leads</li>
+                        <li>❌ Generic messaging that gets ignored</li>
+                        <li>❌ Working 60-hour weeks for 8-12 deals/year</li>
+                        <li>❌ Can't afford to hire an assistant</li>
+                        <li>❌ Losing leads to faster agents</li>
+                    </ul>
+                </div>
+                <div class="comparison-card after">
+                    <h3>After</h3>
+                    <ul>
+                        <li>✅ Generate professional listings in 2 minutes</li>
+                        <li>✅ Automated follow-up sequences running 24/7</li>
+                        <li>✅ Personalized messages that get responses</li>
+                        <li>✅ Working 40-hour weeks closing 20+ deals/year</li>
+                        <li>✅ AI is your $0-cost assistant</li>
+                        <li>✅ Respond to leads in under 60 seconds</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.3rem; margin-top: 40px; font-weight: 600; color: #1e293b;">
+                Reclaim 15-20 hours per week. Close 30-50% more deals. Build a business that doesn't require you to work every weekend.
+            </p>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>See How Real Agents Are Using This to Transform Their Business</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">SM</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Mitchell</div>
+                            <div class="testimonial-title">RE/MAX Toronto</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-highlight">"From 8 Deals to 23 Deals in One Year"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-quote">"I was skeptical about AI, but this prompt library changed everything. I now respond to leads in under 60 seconds, my social media is consistent, and I've tripled my income. Best investment I've ever made."</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MR</div>
+                        <div>
+                            <div class="testimonial-name">Michael Rodriguez</div>
+                            <div class="testimonial-title">Century 21 Vancouver</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-highlight">"Freed Up 20 Hours Per Week"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-quote">"The listing description prompts alone are worth 10x the price. What used to take me 2-3 hours now takes 5 minutes. I'm finally working ON my business instead of IN it."</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JK</div>
+                        <div>
+                            <div class="testimonial-name">Jennifer Kim</div>
+                            <div class="testimonial-title">Independent Agent</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-highlight">"Lead Conversion From 4% to 12%"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-quote">"I was losing leads because I couldn't keep up with follow-ups. The automated sequence templates turned my conversion rate around completely. This is a game-changer for solo agents."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How It Works (Simple 3-Step Process)</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Get Instant Access</h3>
+                    <p>Purchase today and immediately download all 7 modules + 1,000+ prompts. No waiting, no shipping.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Choose Your Prompt</h3>
+                    <p>Find the exact script you need from our organized library. Searchable by category and situation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Copy, Customize, Deploy</h3>
+                    <p>Paste into ChatGPT, make it your own, and watch the results roll in.</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 40px; font-weight: 600;">
+                Most agents see results in their first 24 hours
+            </p>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section id="bonuses">
+        <div class="container">
+            <h2>Order Today and Get These Exclusive Bonuses FREE</h2>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <h3>🎁 Bonus #1: 30-Day Content Calendar</h3>
+                    <div class="bonus-value">$197 VALUE</div>
+                    <p>Pre-planned social media posts, email sequence templates. Never run out of content ideas.</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>🎁 Bonus #2: Objection Handler Cheat Sheet</h3>
+                    <div class="bonus-value">$97 VALUE</div>
+                    <p>Instant responses to the 25 most common objections. Print and keep at your desk.</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>🎁 Bonus #3: Listing Presentation Template</h3>
+                    <div class="bonus-value">$147 VALUE</div>
+                    <p>AI-generated PowerPoint you can customize. Impress sellers from the first meeting.</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>🎁 Bonus #4: Private Community Access</h3>
+                    <div class="bonus-value">$297/YEAR VALUE</div>
+                    <p>Join 2,000+ agents sharing wins and strategies. Monthly live Q&A calls. New prompts added monthly.</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-top: 30px; font-weight: 700; color: #10b981;">
+                Total Bonus Value: $738
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Get Instant Access Today</h2>
+            <div class="pricing-grid" style="max-width: 500px;">
+                <div class="pricing-card recommended">
+                    <div class="badge">LIMITED TIME OFFER</div>
+                    <h3>Complete AI Toolkit</h3>
+                    <div class="price">$47</div>
+                    <p class="price-description">One-time payment • Lifetime access</p>
+                    <ul class="pricing-features">
+                        <li>All 7 training modules</li>
+                        <li>1,000+ prompt library</li>
+                        <li>All 4 bonuses included ($738 value)</li>
+                        <li>Lifetime updates</li>
+                        <li>Private community access</li>
+                        <li>30-day money-back guarantee</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/00wdR94CX1Xbbv1e12frW01" class="cta-button">Get Instant Access - Just $47</a>
+                    <p style="margin-top: 20px; color: #64748b; font-size: 0.95rem;">
+                        <strong>Regular Price: $497</strong> • Save $450 Today
+                    </p>
+                </div>
+            </div>
+
+            <div class="guarantee">
+                <h3>🛡️ 30-Day Money-Back Guarantee</h3>
+                <p>Try it risk-free for 30 days. If you don't save at least 10 hours in your first month, get a full refund—no questions asked.</p>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px; color: #64748b;">
+                All major credit cards accepted • Secure checkout powered by Stripe
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Common Questions Answered</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to be tech-savvy to use this?</div>
+                    <div class="faq-answer">No. If you can copy and paste, you can use this. We include step-by-step training that assumes zero technical knowledge.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Will this work for Canadian/US/etc. real estate?</div>
+                    <div class="faq-answer">Yes. The prompts are customizable for any market and comply with regional regulations. Simply adapt the content to your local requirements.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How is this different from just using ChatGPT?</div>
+                    <div class="faq-answer">ChatGPT is the tool. This is the instruction manual with 1,000+ proven scripts that actually work for real estate. You get the exact prompts that top producers use, plus training on how to customize them for your business.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I use this with other AI tools besides ChatGPT?</div>
+                    <div class="faq-answer">Yes. These prompts work with Claude, Gemini, and other AI assistants. The principles apply to any AI platform.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is this updated?</div>
+                    <div class="faq-answer">Yes. You get lifetime access to all future updates and new prompts as they're added to the library.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I don't close more deals?</div>
+                    <div class="faq-answer">30-day money-back guarantee. If you're not satisfied for any reason, we refund you in full—no questions asked.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How quickly will I see results?</div>
+                    <div class="faq-answer">Most agents report saving time immediately and seeing lead conversion improvements within 2-4 weeks. The listing description prompts alone will save you hours in your first day.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer support?</div>
+                    <div class="faq-answer">Yes. Email support plus access to our private community where you can ask questions and get help from other successful agents.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section id="urgency">
+        <div class="container">
+            <h2>Special Launch Pricing: Lock In $47 Today</h2>
+            <div class="urgency-banner">
+                <p>⚠️ This is a limited-time launch offer. Price increases to $197 on December 31st. Lock in lifetime access at $47—this price will never be available again.</p>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 30px; font-weight: 600;">
+                Only 247 spots left at this introductory price
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <div class="final-cta">
+        <div class="container">
+            <h2>Join 2,000+ Agents Who Are Already Using AI to Dominate Their Markets</h2>
+            <ul>
+                <li>Stop wasting 20+ hours per week on busywork</li>
+                <li>Respond to leads faster than your competition</li>
+                <li>Build a consistent personal brand effortlessly</li>
+                <li>Close more deals while working fewer hours</li>
+                <li>Future-proof your career with AI mastery</li>
+            </ul>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://buy.stripe.com/00wdR94CX1Xbbv1e12frW01" class="cta-button" style="font-size: 1.5rem; padding: 25px 60px;">Get Instant Access Now - Just $47</a>
+                <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.9;">
+                    <del>Regular Price: $497</del> • <strong>Save $450 Today</strong>
+                </p>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 1.1rem;">🛡️ Protected by our 30-Day Money-Back Guarantee</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Real Estate AI Toolkit. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:support@realestateitoolkit.com">Contact Support</a>
+            </div>
+            <p class="disclaimer">
+                Results vary. Success requires effort and implementation. This product provides tools and training but does not guarantee specific business outcomes.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple Analytics (Optional - Add your tracking code) -->
+    <script>
+        // Add your analytics tracking code here
+        // Example: Google Analytics, Facebook Pixel, etc.
+    </script>
+</body>
+</html>
